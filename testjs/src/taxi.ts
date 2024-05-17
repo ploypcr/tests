@@ -1,13 +1,22 @@
 export const Taxi = (kilo :number, minutes :number) => {
-    var sec = (minutes * 60) % 60
-    var min = Math.floor(minutes)
-    if(sec > 0){
-        min += 1
+    return 4*kilo + minutes
+}
+
+export const roundMinimumFare = (fare : number) => {
+    if (fare < 35){
+        return 35
     }
-    var k = kilo % 1
-    kilo = Math.floor(kilo)
-    if(k > 0.5){
-        kilo += 1
-    }
-    return 4 * kilo + 1*min
+    return fare
+}
+
+export const roundDistance = (distance : number) => {
+    return Math.ceil(distance * 2)/2
+}
+
+export const roundWaitingTime = (minutes : number) => {
+    return Math.ceil(minutes)
+}
+
+export const fare = (distance: number, minutes : number) => {
+    return Taxi(roundDistance(distance), roundWaitingTime(minutes))
 }
