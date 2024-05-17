@@ -5,17 +5,8 @@ import (
 )
 
 func FizzBuzz(n int) string {
-	if (n% 3 == 0 && n%5 == 0){
-		return Fizz(n) + Buzz(n)
-	}
-	if (n % 3 == 0){
-		return Fizz(n)
-	}
-	if (n % 5 == 0){
-		return Buzz(n)
-	}
-
-	return ToString(n)
+	s := ToString(n)
+	return s
 }
 func Fizz(n int) string{
 	return "Fizz"
