@@ -4,12 +4,15 @@ import (
 	"fmt"
 )
 
-var boolMap = map[bool]int{false: 0, true:1}
-
 func FizzBuzz(n int) string {
+	if (n % 3 == 0){
+		return Fizz(n)
+	}
 	return ToString(n)
 }
-
+func Fizz(n int) string{
+	return "Fizz"
+}
 func ToString(n int) string{
 	return fmt.Sprintf("%v", n)
 }
